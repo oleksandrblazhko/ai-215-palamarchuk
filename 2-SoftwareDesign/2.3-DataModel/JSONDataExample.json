@@ -1,0 +1,39 @@
+{
+  "user": {
+    "login": "login",
+    "password": "password"
+  },
+  "cleaningParameters": {
+    "Na": 150,
+    "K": 150,
+    "Ca": 150,
+    "sand": 150,
+    "salt": 150,
+    "rust": 150,
+    "strictness": 0.95
+  },
+  "cleanindSystem": {
+    "currentData": {
+      "Na": 250,
+      "K": 250,
+      "Ca": 250,
+      "sand": 250,
+      "salt": 250,
+      "rust": 250
+    }
+  },
+  "reportParameters": {
+    "frequency": 150,
+    "parameters": {
+      "details": "DETAILED",
+      "excludedOptions": [
+
+      ]
+    }
+  },
+  "report": {
+    "body": "body",
+    "date": "14:17:43T12.10.2023",
+    "recomendation": "recomendations"
+  }
+}
