@@ -1,4 +1,4 @@
-CREATE DOMAIN positive_integer AS INT CHECK (VALUE >= 0 AND VALUE < 999);
+CREATE DOMAIN positive_integer AS INT CHECK (positive_integer ~ '^[1-9][0-9]{0,2}$');
 
 -- Создание таблицы пользователей
 CREATE TABLE users (
@@ -16,7 +16,7 @@ CREATE TABLE cleaning_parameters (
     sand positive_integer,
     salt positive_integer,
     rust positive_integer,
-    strictness NUMERIC CHECK (strictness >= 0.0 AND strictness <= 1.0)
+    strictness NUMERIC CHECK (strictenss ~ '^(0(\.\d+)?|1(\.0+)?)$')
 );
 
 -- Создание таблицы текущих данных системы очистки
