@@ -1,0 +1,124 @@
+@startjson
+{
+  "description": "Приклад опису даних для моделі освітлювальної системи",
+  "data": [
+    {
+  "type": "object",
+  "properties": {
+    "user": {
+      "type": "object",
+      "properties": {
+        "login": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": ["login", "password"]
+    },
+    "cleaningParameters": {
+      "type": "object",
+      "properties": {
+        "Na": {
+          "type": "integer"
+        },
+        "K": {
+          "type": "integer"
+        },
+        "Ca": {
+          "type": "integer"
+        },
+        "sand": {
+          "type": "integer"
+        },
+        "salt": {
+          "type": "integer"
+        },
+        "rust": {
+          "type": "integer"
+        },
+        "strictness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": ["Na", "K", "Ca", "sand", "salt", "rust", "strictness"]
+    },
+    "cleanindSystem": {
+      "type": "object",
+      "properties": {
+        "currentData": {
+          "type": "object",
+          "properties": {
+            "Na": {
+              "type": "integer"
+            },
+            "K": {
+              "type": "integer"
+            },
+            "Ca": {
+              "type": "integer"
+            },
+            "sand": {
+              "type": "integer"
+            },
+            "salt": {
+              "type": "integer"
+            },
+            "rust": {
+              "type": "integer"
+            }
+          },
+          "required": ["Na", "K", "Ca", "sand", "salt", "rust"]
+        }
+      },
+      "required": ["currentData"]
+    },
+    "reportParameters": {
+      "type": "object",
+      "properties": {
+        "frequency": {
+          "type": "integer"
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "details": {
+              "type": "string",
+              "enum": ["DETAILED"]
+            },
+            "excludedOptions": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "required": ["details", "excludedOptions"]
+        }
+      },
+      "required": ["frequency", "parameters"]
+    },
+    "report": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "pattern": "\\d{2}:\\d{2}:\\d{2}T\\d{2}\\.\\d{2}\\.\\d{4}"
+        },
+        "recomendation": {
+          "type": "string"
+        }
+      },
+      "required": ["body", "date", "recomendation"]
+    }
+  },
+  "required": ["user", "cleaningParameters", "cleanindSystem", "reportParameters", "report"]
+}
+
+  ]
+}
+@endjson

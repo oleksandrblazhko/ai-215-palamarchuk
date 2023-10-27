@@ -1,0 +1,63 @@
+@startuml
+
+title CleanUp System
+
+class "User" {
+  -login: string
+  -password: string
+  +setLogin(login: string): void
+  +setPassword(password: string): void
+}
+
+class "CleaningParameters" {
+  -Na: int
+  -K: int
+  -Ca: int
+  -sand: int
+  -salt: int
+  -rust: int
+  -strictness: float
+  +setNa(Na: int): void
+  +setK(K: int): void
+  +setCa(Ca: int): void
+  +setSand(sand: int): void
+  +setSalt(salt: int): void
+  +setRust(rust: int): void
+  +setStrictness(strictness: float): void
+}
+
+class "CleaningSystem" {
+  -currentData: CleaningParameters
+  +updateCurrentData(data: CleaningParameters): void
+}
+
+class "Parameters" {
+    -details: string
+    -excludedOptions: string[]
+}
+
+class "ReportParameters" {
+  -frequency: int
+  -parameters: Parameters
+  +setFrequency(frequency: int): void
+  +setDetails(details: string): void
+  +addExcludedOption(option: string): void
+}
+
+class "Report" {
+  -body: string
+  -date: string
+  -recommendation: string
+  +setBody(body: string): void
+  +setDate(date: string): void
+  +setRecommendation(recommendation: string): void
+}
+
+"User" -- "CleaningParameters" : has
+"User" -- "CleaningSystem" : controls
+"User" -- "ReportParameters" : configures
+"User" -- "Report" : generates
+"CleaningSystem" -- "CleaningParameters" : has
+"Report" -- "ReportParameters" : has
+
+@enduml

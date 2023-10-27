@@ -1,0 +1,15 @@
+@startuml
+
+left to right direction
+actor :User:
+
+rectangle Software {
+
+    usecase (Registration/Authorization)
+    usecase (Request Cleaning Report)
+
+   :User: -- (Registration/Authorization)
+   (Registration/Authorization) .> (Request Cleaning Report) : include
+}
+
+@enduml

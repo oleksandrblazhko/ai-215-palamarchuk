@@ -1,0 +1,32 @@
+@startuml
+
+title Activity Diagram Cleaning Process
+
+start
+:User provides data for cleaning;
+if (Are all fields filled?) then (yes)
+   :All fields are filled;
+   if (Data validation is successful?) then (yes)
+       :Data is valid;
+       :Initiate data cleaning process;
+       :Clean and process data;
+       if (Data cleaning is successful?) then (yes)
+           :Data is clean and ready;
+           :Generate cleaning report;
+           :Display cleaning report to the user;
+       else (no)
+           :Data cleaning failed;
+           :Inform the user of the failure;
+       endif
+   else (no)
+       :Data validation failed;
+       :Inform the user of validation errors;
+   endif
+else (no)
+   :Not all fields are filled;
+   :Ask the user to fill in all required fields;
+endif
+
+stop
+
+@enduml
