@@ -1,4 +1,4 @@
-### Опис фреймворку JUnit для Android
+# Опис фреймворку JUnit для Android
 JUnit є популярним фреймворком для тестування коду в мові програмування Java, включаючи його використання в Android-розробці. Нижче подано огляд основних понять та функцій JUnit для тестування Android додатків.
 
 Вступ
@@ -12,7 +12,7 @@ JUnit дозволяє створювати та виконувати автом
 public void testMethod() {
     // код тестування
 }
-# @Before та @After
+### @Before та @After
 Аннотації @Before та @After використовуються для визначення методів, які мають бути викликані перед та після кожного тесту відповідно. Наприклад, це може бути корисно для налаштування та очищення ресурсів.
 
 @Before
@@ -24,7 +24,7 @@ public void setUp() {
 public void tearDown() {
     // очищення ресурсів після тесту
 }
-# @RunWith
+### @RunWith
 Аннотація @RunWith вказує JUnit, який клас використовувати як "ранер" (runner) для виконання тестів. В Android-розробці зазвичай використовують AndroidJUnit4.class.
 
 @RunWith(AndroidJUnit4.class)
@@ -34,7 +34,7 @@ public class MyTestClass {
 ## Тестування Android-компонентів
 Для тестування Android-компонентів, таких як активності чи фрагменти, можна використовувати ActivityTestRule або FragmentTestRule разом із аннотацією @Rule.
 
-#@Rule
+### @Rule
 public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
 
 @Test
